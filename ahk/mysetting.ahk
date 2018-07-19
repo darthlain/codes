@@ -36,7 +36,7 @@ Shift & vkBAsc028:: send,{blind}"
 ]::`
 Shift & ]:: send,{blind}~
 
-Shift & \:: send,{blind}|
+Shift & vkE2sc073:: send,{blind}|
 
 vk1Dsc07B::vk1Dsc07B
 
