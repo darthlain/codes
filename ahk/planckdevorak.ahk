@@ -128,6 +128,3 @@ vk1Csc079 & m:: send,!^+#f
 vk1csc079 & ,:: send,{Volume_Down}
 vk1Csc079 & .:: send,{Volume_Up}
 vk1Csc079 & /:: send,{Volume_Mute}
-
-vk1Csc079 & 1:: Reload
-vk1Csc079 & 2:: Suspend
