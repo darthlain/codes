@@ -1,0 +1,156 @@
+"fをアルファベットに
+set hintchars=asdfghjklweio
+"set hintchars=aoeuidhtns
+
+"[[]]をより強く どっかで拾った
+set nextpattern=\bnext\b,\bmore\b,next,^次(の)?ページ,\b次.*,→\b,^>$,^(>>|≫)$,^(>|≫),(>|≫)$,^次(へ|の|ペ),^続き,\bnext\b,^>$,^(>>|≫)$,^(>|≫),(>|≫)$,\bmore\b
+set previouspattern=\bprev|previous\b,prev,^前(の)?ページ,\b前.*,\b←,^<$,^(<<|≪)$,^(<|≪),(<|≪)$,^前(へ|の|ペ),^戻る,\bprev|previous\b,^<$,^(<<|≪)$,^(<|≪),(<|≪)$ 
+
+"ビープ音停止
+js liberator.beep=function()(void 0)
+
+"検索エンジン
+"set defsearch=楽天ウェブ検索
+set defsearch=google
+
+"Backspaceを無効化する。
+noremap <BS> ""
+
+" commandモードでIMEオフ
+style! -name=commandline-ime chrome://* #liberator-commandline-command input {ime-mode: inactive;}
+
+" :oなどでの補完候補をサーチエンジン、履歴に限定
+"set complete=sl
+
+" ビジュアルベルを表示しない
+set visualbell
+highlight Bell display:none
+
+" 入力欄に自動フォーカスしない
+set focuscontent
+
+" ブラウザタイトルの変更
+set titlestring=
+
+" 検索で大文字小文字を無視
+set ignorecase
+
+"ヒントを大きくする
+highlight Hint font-family: monospace; font-size: 18px; font-weight: bold; text-transform: uppercase; color: white; background-color: red; border-color: ButtonShadow; border-width: 0px; border-style: solid; padding: 0px 1px 0px 1px;
+
+""""""キーマップ""""""
+
+"""hjkl
+
+"jkの移動量
+nnoremap j <C-d>
+nnoremap k <C-u>
+
+"タブ移動
+nnoremap h <C-p>
+nnoremap l <C-n>
+
+"少し移動
+noremap <C-h> 2h
+noremap <C-l> 2l
+noremap <C-j> 2j
+noremap <C-k> 2k
+
+"i移動
+inoremap <C-b> <Left>
+inoremap <C-j> <Down>
+inoremap <C-k> <Up>
+inoremap <C-l> <Right>
+
+"visual移動
+vnoremap j <Down>
+vnoremap k <Up>
+
+" タブの位置変更
+noremap <S-k> :tabmove! +1<CR>
+noremap <S-j> :tabmove! -1<CR>
+
+"""基本
+
+nnoremap sh :noh<CR>
+
+"caret-hint
+noremap c ;c
+
+"history
+nnoremap sh :history<Space>
+
+"insert ペースト
+inoremap <C-p> <S-Insert>
+
+"検索エラー
+set nohls
+
+" ブラウザ再起動
+nnoremap <C-S-r> :restart<CR>
+
+"""ctrl
+
+"tabclose!
+noremap <C-t> :tabclose!<CR>
+
+noremap <C-f> ;;
+noremap <C-b> <C-S-b>
+noremap <C-q> <C-S-a>
+noremap <C-c> <C-[>
+
+"""shift
+"全てのタブを再読み込み
+nnoremap <S-r> :reloadall<CR>
+
+" undo一覧から開く
+nnoremap U :undo<Space>
+let g:hint_tombloo_key = 'r'
+
+"検索バー
+noremap sk <C-k>
+
+"""stella
+
+"play
+noremap p :stpl<CR>
+"reset
+noremap ,r :stse<space>0<CR>
+"volume
+noremap ,v :stvolume<space>
+"mute
+noremap ,m :stmu<CR>
+"seek
+noremap ,s :stse<space>
+"seek!
+noremap ,S :stse!<space>
+"go 10sec
+noremap ,g :stse!<space>10<CR>
+"back 10sec
+noremap ,b :stse!<space>-10<CR>
+"go 1 minute
+noremap ,G :stse!<space>1:00<CR>
+"back 1 minute
+noremap ,B :stse!<space>-1:00<CR>
+"half
+noremap ,h :stse!<space>30:00<CR>
+noremap ,H :stse!<space>-30:00<CR>
+"5 minute
+noremap ,f :stse!<space>5:00<CR>
+noremap ,F :stse!<space>-5:00<CR>
+"10 minute
+noremap ,t :stse!<space>10:00<CR>
+noremap ,T :stse!<space>-10:00<CR>
+
+"""禁止(ブラウザのショートカットが使いたいとき)
+noremap <C-d> <Ins><C-d><Ins>
+noremap <C-n> <Ins><C-n><Ins>
+noremap <C-w> <Ins><C-n><Ins>
+
+"""aboutconfig
+"日本語化
+set! general.useragent.locale=ja
+"plugin-container関連?
+set! dom.ipc.plugins.enabled=false
+"アドオンインストール時の待ち時間をなくす
+set! security.dialog_enable_delay=0

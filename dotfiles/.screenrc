@@ -1,0 +1,37 @@
+#アプリ終了時に画面クリア
+altscreen on
+
+#vim esc遅くならない
+maptimeout 0
+
+#画面がチカチカしない
+vbell off
+
+#エンコ
+defencodig utf-8
+
+#起動メッセージキル
+startup_message off
+
+#オートデタッチ
+autodetach on
+
+#ステータスライン
+hardstatus alwayslastline "%-w%{= gk}%n %t%{-}%+w"
+
+#ウインドウいちから
+bind c screen 1
+bind ^c screen 1
+bind 0 select
+10
+screen 1
+
+#256色設定
+#terminfo and termcap for nice 256 color terminal
+# allow bold colors - necessary for some reason
+attrcolor b ".I"
+# tell screen how to set colors. AB = background, AF=foreground
+termcapinfo xterm "Co#256:AB=\E[48;5;%dm:AF=\E[38;5;%dm"
+termcapinfo xterm-color "Co#256:AB=\E[48;5;%dm:AF=\E[38;5;%dm"
+# erase background with current bg color
+defbce "on"

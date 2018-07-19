@@ -1,0 +1,13 @@
+if which trash-put &>/dev/null; then
+  alias rm=trash-put
+fi
+alias vi='nvim'
+alias ff='~/.firefox/firefox &'
+alias chromium='chromium-browser &'
+alias get='sudo apt install'
+alias untar.gz='tar -zxvf'
+alias untar.bz2='tar -jxvf'
+alias untar.xz='tar -jxvf'
+alias untar='tar -xvf'
+alias dvorak='xmodmap ~/.dotfiles/xmodmap/jis_dvorak'
+alias jis_us='xmodmap ~/.dotfiles/xmodmap/jis_us'

@@ -1,0 +1,31 @@
+;quicklisp setting
+(load "~/.quicklisp/setup.lisp")
+
+(defun mylib ()
+  (load "~/.myfiles/codes/lisp/lib/mylib.lisp"))
+
+(defun sdl ()
+  (ql:quickload :lispbuilder-sdl) 
+  (ql:quickload :lispbuilder-sdl-gfx)
+  (ql:quickload :lispbuilder-sdl-image)
+  (ql:quickload :lispbuilder-sdl-mixer)
+  (ql:quickload :lispbuilder-sdl-ttf)
+  (ql:quickload :lispbuilder-sdl-examples)
+  (load "~/.myfiles/codes/lisp/lib/sdllib.lisp")
+  (load "~/.myfiles/codes/lisp/lib/sdljalib.lisp"))
+
+(defun ltk ()
+  (ql:quickload :ltk))
+
+;utf-8 setting
+(setf sb-impl::*default-external-format* :utf-8)
+(setf sb-alien::*default-c-string-external-format* :utf-8)
+
+;;; The following lines added by ql:add-to-init-file:
+#-quicklisp
+(let ((quicklisp-init (merge-pathnames ".quicklisp/setup.lisp"
+                                       (user-homedir-pathname))))
+  (when (probe-file quicklisp-init)
+    (load quicklisp-init)))
+
+(mylib)

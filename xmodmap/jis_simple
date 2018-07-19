@@ -1,0 +1,9 @@
+remove lock = Caps_Lock
+
+keycode 9 = Zenkaku_Hankaku
+keycode 49 = Escape
+keycode 66 = Control_L
+keycode 100 = Return
+keycode 101 = BackSpace
+
+add control = Control_L
