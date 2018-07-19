@@ -36,6 +36,8 @@ Shift & vkBAsc028:: send,{blind}"
 ]::`
 Shift & ]:: send,{blind}~
 
+Shift & \:: send,{blind}|
+
 vk1Dsc07B::vk1Dsc07B
 
 vk1Dsc07B & a:: shiftalttab

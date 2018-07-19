@@ -35,3 +35,5 @@ vkBAsc028::'
 Shift & vkBAsc028:: send,{blind}"
 ]::`
 Shift & ]:: send,{blind}~
+
+Shift & \:: send,{blind}|
