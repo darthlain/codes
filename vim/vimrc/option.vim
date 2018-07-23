@@ -49,8 +49,9 @@ set tabstop=2
 set shiftwidth=2
 set expandtab
 set smartindent
-"ctrl-c設定
-set timeout timeoutlen=1000 ttimeoutlen=50
+"ESCの挙動
+"set timeout timeoutlen=1000 ttimeoutlen=50
+set ttimeoutlen=10
 "自動改行禁止
 set tw=0
 "ビープ音＆画面フラッシュを消す
@@ -84,7 +85,7 @@ set visualbell
 "現在行強調
 set cursorline
 "保管時のプレビューを無効
-set completeopt =
+set completeopt=
 "カッコ対応表示ライブラリのmatchparenを無効にする
 "let loaded_matchparen = 1
 "vimscriptの継続行のインデント
@@ -95,12 +96,12 @@ if has('persistent_undo')
   set undofile
 endif
 "quickrunなどのタブの開き方
-set splitbelow
+"set splitbelow
 "set splitright
 "lisp
 let g:lisp_rainbow=1
-set lispwords+=
-"set lisp
+set lispwords-=if
+set lisp
 "オムニ補完ができないのを改善?
 setlocal omnifunc=syntaxcomplete#Complete
 "エンコード設定
@@ -131,6 +132,9 @@ augroup fileTypeIndent
     au BufEnter *.c   setlocal ts=4 sts=4 sw=4
     au BufEnter *.h   setlocal ts=4 sts=4 sw=4
     au BufEnter *.cpp setlocal ts=4 sts=4 sw=4
+    "au BufEnter *.scm setlocal ts=2 sts=2 sw=2
+    "au BufEnter *.scm setlocal indentexpr=
+    "au BufEnter *.scm setlocal lisp
 augroup END
 
 "kaoriya設定無効?

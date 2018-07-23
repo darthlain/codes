@@ -4,6 +4,6 @@ keycode 9 = Zenkaku_Hankaku
 keycode 49 = Escape
 keycode 66 = Control_L
 keycode 100 = Return
-keycode 101 = BackSpace
+keycode 101 = Pointer_Button3
 
 add control = Control_L

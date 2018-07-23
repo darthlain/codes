@@ -1,5 +1,3 @@
-let g:deoplete#enable_at_startup = 1
-
 "vimfiler
 "let g:vimfiler_enable_auto_cd = 1
 "unite ブックマークを開く時vimfilerで開く
@@ -9,7 +7,7 @@ call unite#custom_default_action('source/bookmark/directory' , 'vimfiler')
 let g:vimproc#download_windows_dll = 1
 
 "slimv
-let g:slimv_swank_cmd ='! xterm -e sbcl --load ~/.vim/bundle/slimv/slime/start-swank.lisp &'
+let g:slimv_swank_cmd ='! xterm -e sbcl --load ~/.cache/dein/repos/github.com/kovisoft/slimv/slime/start-swank.lisp &'
 
 let g:slimv_repl_split = 4
 "let g:paredit_mode=1
@@ -51,3 +49,9 @@ let g:quickrun_config = {
 \'command': 'wish'
 \},
 \}
+
+"deoplete 
+let g:deoplete#enable_at_startup = 1
+inoremap <expr><tab> pumvisible() ? "\<C-n>" :
+\ neosnippet#expandable_or_jumpable() ?
+\    "\<Plug>(neosnippet_expand_or_jump)" : "\<tab>"

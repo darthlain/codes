@@ -249,3 +249,17 @@
       (tarai (tarai (1- x) y z)
              (tarai (1- y) z x)
              (tarai (1- z) x y))))
+
+(defun toggle (x &rest y)
+  (lambda (&rest toggle?)
+    (if toggle?
+        (let ((temp x))
+          (setf x (car y))
+          (setf y (append (cdr y) (list temp)))
+          x)
+        x)))
+
+(defun seq (from to)
+  (if (> from to)
+      nil
+      (cons from (seq (1+ from) to))))

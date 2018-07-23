@@ -63,9 +63,8 @@ nnoremap         <Leader>I  :VimShellInteractive --split='split'
 nnoremap         <Leader>m  :MRU 
 nnoremap         <Leader>n  :tabnext<CR>
 nnoremap         <Leader>p  :tabprevious<CR>
-nnoremap <silent><Leader>q  :call WQuickRun()<CR>
-nnoremap <silent><Leader>Q  :QuickRun<CR>
-nnoremap <silent><Leader>r  :call Runprogram()<CR>
+nnoremap <silent><Leader>r  :call WQuickRun()<CR>
+nnoremap <silent><Leader>R  :QuickRun<CR>
 "nnoremap <silent><Leader>s  :call Vimshellf()<CR>
 nnoremap <silent><Leader>s  :VimShallCreate<CR>
 nnoremap <silent><Leader>S  :VimShell<CR>
