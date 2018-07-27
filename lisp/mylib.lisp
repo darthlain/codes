@@ -179,6 +179,12 @@
   (read-from-string
     (apply #'concatenate 'string (mapcar #'string syms))))
 
+(defun dig (x lst)
+  (cond
+    ((null lst) nil)
+    ((eq x (car lst)) (dig x (cdr lst)))
+    (t lst)))
+
 ;Binary Number List
 (defun bnl-1- (lst)
   (labels ((f (l) (cond ((eq (car l) 0) (cons 1 (f (cdr l))))
@@ -230,18 +236,17 @@
 
 (defun recip (x) (expt x -1))
 
-(defun sort-check (lst)
-  (labels ((f (lst max)
-             (cond ((null lst) t)
-                   ((< (car lst) max) nil)
-                   (t (f (cdr lst) (car lst))))))
-    (f lst 0)))
+(defun st (lst f)
+  (sort (copy-list lst) f))
 
-(defun bogo (lst)
+(defun sortp (lst f)
+  (equal (st lst f) lst))
+
+(defun bogo (lst f)
   (let ((x (random-list lst)))
-    (if (sort-check x)
+    (if (apply f x)
         x
-        (bogo lst))))
+        (bogo lst f))))
 
 (defun tarai (x y z)
   (if (<= x y)
@@ -263,3 +268,6 @@
   (if (> from to)
       nil
       (cons from (seq (1+ from) to))))
+
+(defun sq (x)
+  (seq 0 (1- x)))
