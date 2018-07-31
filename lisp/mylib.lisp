@@ -269,5 +269,5 @@
       nil
       (cons from (seq (1+ from) to))))
 
-(defun sq (x)
+(defun iota (x)
   (seq 0 (1- x)))

@@ -17,6 +17,11 @@ let g:paredit_leader = ","
 syntax enable
 set background=dark
 
+"カラースキーム
+colorscheme molokai
+hi Comment ctermfg=102
+hi Visual  ctermbg=236
+
 "openbrowser
 let g:netrw_nogx = 1 " disable netrw's gx mapping.
 

@@ -1,5 +1,4 @@
 set number                " 行番号
-set ruler                 " ルーラー表示
 set backspace=2           " バックスペース設定
 set textwidth=0           " 自動改行禁止
 set laststatus=2          " ステータスライン常に表示
@@ -10,46 +9,48 @@ set gdefault              " :sコマンドで/gオプションをデフォルト
 set mouse=a               " マウス操作有効
 set winaltkeys=yes        " winキーとaltキーを有効
 set completeopt=          " 保管時のプレビューを無効
+
+set vb t_vb=              " ビープ音＆画面フラッシュを消す
+set clipboard=unnamed     " クリップボード設定
+set wildmode=longest,full " ファイル名補完設定
+set ambiwidth=double      " 全角記号の表示がずれる問題への対応
+set guicursor=a:blinkon0  " カーソルを点滅させない
+set visualbell            " ビジュアルベル
+set shellslash            " windowsでファイルの区切り/を有効
 set hlsearch              " 検索結果をハイライト
 set incsearch             " インクリメンタルサーチ
 set ignorecase            " 検索時大文字小文字を無視
 set smartcase             " 大文字小文字の含まれる場合は区別
 set wrapscan              " 検索を折り返す
-set shellslash            " windowsでファイルの区切り/を有効
-set visualbell            " ビジュアルベル
-set guicursor=a:blinkon0  " カーソルを点滅させない
-set clipboard=unnamed     " クリップボード設定
-set wildmode=longest,full " ファイル名補完設定
-set ambiwidth=double      " 全角記号の表示がずれる問題への対応
-set vb t_vb=              " ビープ音＆画面フラッシュを消す
 " set scrolloff=9999        "タイプライタースクロール
 " let loaded_matchparen = 1 "カッコ対応表示ライブラリのmatchparenを無効にする
 
+set expandtab
+set shiftwidth=2
+set autoindent
+set smartindent
 " set timeout timeoutlen=1000 ttimeoutlen=50 "ESCの挙動
 set ttimeoutlen=10
-set guioptions-=m         " メニューバー設定
-set guioptions-=T         " ツールバー設定
-set guioptions-=r         " スクロールバー設定
+set guioptions-=m              " メニューバー設定
+set guioptions-=T              " ツールバー設定
+set guioptions-=r              " スクロールバー設定
 set guioptions-=R
 set guioptions-=l
 set guioptions-=L
-set backupdir=/var/tmp    " バックアップ
+set backupdir=/var/tmp         " バックアップ
 set backup
-set directory=/var/tmp    " swapファイル
+set directory=/var/tmp         " swapファイル
 set swapfile
-set undodir=/var/tmp      " undoファイル
+set undodir=/var/tmp           " undoファイル
 set undofile
+set viminfo+=n/var/tmp/viminfo " viminfoファイル
 
-
-colorscheme molokai       "カラースキーム
-hi Comment ctermfg=102
-hi Visual  ctermbg=236
-set encoding=utf-8        " エンコード設定
+set encoding=utf-8             " エンコード設定
 set fileencodings=utf-8,euc-jp,sjis,cp932,iso-2022-jp
 set fileformats=unix,dos,mac
-set lispwords-=if         "lispインデント
-let g:vim_indent_cont = 0 " vimscriptの継続行のインデント
-" set splitbelow          "quickrunなどのタブの開き方
+set lispwords-=if              " lispインデント
+let g:vim_indent_cont = 0      " vimscriptの継続行のインデント
+" set splitbelow            "quickrunなどのタブの開き方
 " set splitright
 
 " オムニ補完ができないのを改善?

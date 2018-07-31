@@ -1,4 +1,5 @@
 noremap ; :
+nnoremap == gg=G
 set pastetoggle=<F2>
 
 "禁止
