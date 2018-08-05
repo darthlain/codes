@@ -1,12 +1,11 @@
 noremap ; :
-nnoremap == gg=G
+nnoremap == 30==
 set pastetoggle=<F2>
 
 "禁止
 nnoremap ZZ <Nop>
 nnoremap ZQ <Nop>
 nnoremap Q <Nop>
-nnoremap s <Nop>
 nnoremap , <Nop>
 
 "insert時矢印キーでABCDが入力されてしまう問題の修正
@@ -52,8 +51,7 @@ vnoremap         <Leader>o <Plug>(openbrowser-smart-search)
 map      <silent><Leader>p <F2>
 nnoremap <silent><Leader>r  :call WQuickRun()<CR>
 nnoremap <silent><Leader>r  :QuickRun<CR>
-nnoremap <silent><Leader>s  :VimShell<CR>
-nnoremap <silent><Leader>S  :VimShallCreate<CR>
+nnoremap <silent><Leader>S  :VimShell<CR>
 nnoremap <silent><Leader>t  :tabnew<CR>
 nnoremap         <Leader>v  :source %<CR>
 nnoremap         <Leader>w  :W3m google 

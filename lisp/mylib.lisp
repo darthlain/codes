@@ -4,6 +4,28 @@
 ;  '(inline last1 singlep append1 nconc1 mklist xyconvert relist remmul
 ;           split double))
 
+(defvar *alphabets* '(a b c d e f g h i
+                      j k l m n o p q r
+                      s t u v w x y z))
+
+(defvar *hiraganas* '(あ い う え お
+                      か き く け こ
+                      さ し す せ そ
+                      た ち つ て と
+                      な に ぬ ね の
+                      は ひ ふ へ ほ
+                      ま み む め も
+                      や    ゆ    よ
+                      ら り る れ ろ
+                      わ    を    ん
+                      が ぎ ぐ げ ご
+                      ざ じ ず ぜ ぞ
+                      だ ぢ づ で ど
+                      ば び ぶ べ ぼ
+                      ぱ ぴ ぷ ぺ ぽ
+                      ぁ ぃ ぅ ぇ ぉ
+                      ゃ ゅ ょ っ))
+
 (defmacro lazy (&body body)
   (let ((forced (gensym))
         (value (gensym)))
@@ -17,6 +39,14 @@
 
 (defun force (lazy-value)
   (funcall lazy-value))
+
+(defun pick (lst)
+  (nth (random (length lst)) lst))
+
+(defun make-name (x symbol-list)
+  (apply #'concatenate 'string
+         (loop for i in (make-list x)
+               collect (symbol-name (pick symbol-list)))))
 
 (defun random-list (lst)
   (dotimes (x (length lst) lst)
@@ -255,7 +285,7 @@
              (tarai (1- y) z x)
              (tarai (1- z) x y))))
 
-(defun toggle (x &rest y)
+(defun make-toggle (x &rest y)
   (lambda (&rest toggle?)
     (if toggle?
         (let ((temp x))
@@ -264,10 +294,5 @@
           x)
         x)))
 
-(defun seq (from to)
-  (if (> from to)
-      nil
-      (cons from (seq (1+ from) to))))
-
 (defun iota (x)
-  (seq 0 (1- x)))
+  (loop for i from 0 below x collect i))

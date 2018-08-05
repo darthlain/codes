@@ -26,6 +26,7 @@ set wrapscan              " 検索を折り返す
 " let loaded_matchparen = 1 "カッコ対応表示ライブラリのmatchparenを無効にする
 
 set expandtab
+set tabstop=2
 set shiftwidth=2
 set autoindent
 set smartindent
