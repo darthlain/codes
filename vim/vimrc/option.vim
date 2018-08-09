@@ -1,4 +1,5 @@
 set number                " 行番号
+set ruler
 set backspace=2           " バックスペース設定
 set textwidth=0           " 自動改行禁止
 set laststatus=2          " ステータスライン常に表示
@@ -44,7 +45,7 @@ set directory=/var/tmp         " swapファイル
 set swapfile
 set undodir=/var/tmp           " undoファイル
 set undofile
-set viminfo+=n/var/tmp/viminfo " viminfoファイル
+set viminfo=                   " viminfoファイル
 
 set encoding=utf-8             " エンコード設定
 set fileencodings=utf-8,euc-jp,sjis,cp932,iso-2022-jp
