@@ -62,7 +62,7 @@ map      <silent><Leader>p <F2>
 nnoremap <silent><Leader>r :QuickRun<CR>
 nnoremap <silent><Leader>R :call WQuickRun()<CR>
 nnoremap <silent><Leader>s :terminal<CR>
-nnoremap <silent><Leader>S :VimShell<CR>
+nnoremap <silent><Leader>s :terminal<CR>
 nnoremap <silent><Leader>t :Unite outline<CR>
 nnoremap         <Leader>v :source %<CR>
 nnoremap         <Leader>w :W3m google 

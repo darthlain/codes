@@ -58,8 +58,17 @@
                             (f a (cons b acc))))))
     (f x nil)))
 
+(defun group (source n)
+  (if (zerop n) (error "zero length"))
+  (labels ((rec (source acc)
+             (let ((rest (nthcdr n source)))
+               (if (consp rest)
+                   (rec rest (cons (subseq source 0 n) acc))
+                   (nreverse (cons source acc))))))
+    (if source (rec source nil) nil)))
+
 (defun keta (num)
-  (let ((x (if (< num 0) (opposite num) num)))
+  (let ((x (if (< num 0) (- num) num)))
     (labels ((f (x acc) (if (< x 10) acc (f (truncate x 10) (1+ acc)))))
       (f x 1))))
 
@@ -273,6 +282,8 @@
   (equal (st lst f) lst))
 
 (defun bogo (lst f)
+  (if (eq f #'<) (setf f #'<=))
+  (if (eq f #'>) (setf f #'>=))
   (let ((x (random-list lst)))
     (if (apply f x)
         x
@@ -296,3 +307,10 @@
 
 (defun iota (x)
   (loop for i from 0 below x collect i))
+
+(defun bub (lst)
+  (loop for i below (length lst) do
+        (loop for n from (1+ i) below (length lst) do
+              (if (> (nth i lst) (nth n lst))
+                  (rotatef (nth i lst) (nth n lst)))))
+  lst)
