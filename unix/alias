@@ -1,7 +1,4 @@
-if which trash-put &>/dev/null; then
-  alias rm=trash-put
-fi
-
+alias rm=trash-put
 alias vi='nvim'
 alias ff='~/.firefox/firefox &'
 alias chromium='chromium-browser &'

@@ -1,20 +1,18 @@
 ;quicklisp setting
 (load "~/.quicklisp/setup.lisp")
 
-(defun mylib ()
-  (load "~/.myfiles/codes/lisp/lib/mylib.lisp"))
+(load "~/codes/lisp/mylib.lisp")
 
-(defun sdl ()
+(defun load-sdl ()
   (ql:quickload :lispbuilder-sdl) 
   (ql:quickload :lispbuilder-sdl-gfx)
   (ql:quickload :lispbuilder-sdl-image)
   (ql:quickload :lispbuilder-sdl-mixer)
   (ql:quickload :lispbuilder-sdl-ttf)
   (ql:quickload :lispbuilder-sdl-examples)
-  (load "~/.myfiles/codes/lisp/lib/sdllib.lisp")
-  (load "~/.myfiles/codes/lisp/lib/sdljalib.lisp"))
+  )
 
-(defun ltk ()
+(defun load-ltk ()
   (ql:quickload :ltk))
 
 ;utf-8 setting
@@ -27,5 +25,3 @@
                                        (user-homedir-pathname))))
   (when (probe-file quicklisp-init)
     (load quicklisp-init)))
-
-(mylib)

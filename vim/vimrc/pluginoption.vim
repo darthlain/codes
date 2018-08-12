@@ -7,14 +7,14 @@ hi Visual  ctermbg=236
 call unite#custom_default_action('source/bookmark/directory' , 'vimfiler') 
 
 "slimv
-let g:slimv_swank_cmd ='! xterm -e sbcl --load ~/.cache/dein/repos/github.com/kovisoft/slimv/slime/start-swank.lisp &'
+let g:slimv_swank_cmd ='! xterm -e sbcl --load ~/.cache/vim-plug/slimv/slime/start-swank.lisp &'
 
 let g:slimv_repl_split = 4
 "let g:paredit_mode=1
 let g:paredit_electric_return = 0
 let g:slimv_leader=","
 let g:paredit_leader = ","
-let g:slimv_repl_split_size = 10
+let g:slimv_repl_split_size = 50
 
 "solarized
 syntax enable
