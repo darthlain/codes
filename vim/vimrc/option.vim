@@ -1,5 +1,6 @@
 set number                " 行番号
-set ruler
+set ruler                 " ルーラー
+set t_Co=256              " 256色
 set backspace=2           " バックスペース設定
 set textwidth=0           " 自動改行禁止
 set laststatus=2          " ステータスライン常に表示

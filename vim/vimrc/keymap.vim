@@ -59,6 +59,7 @@ nnoremap <silent><Leader>n :tabnew<CR>
 nnoremap         <Leader>o <Plug>(openbrowser-smart-search)
 vnoremap         <Leader>o <Plug>(openbrowser-smart-search)
 map      <silent><Leader>p <F2>
+nnoremap <silent><Leader>P :PlugInstall<CR>
 nnoremap <silent><Leader>r :QuickRun<CR>
 nnoremap <silent><Leader>R :call WQuickRun()<CR>
 nnoremap <silent><Leader>s :terminal<CR>
